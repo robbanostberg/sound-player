@@ -3,3 +3,4 @@
 *.m4a
 dist/
 build/
+__pycache__/
