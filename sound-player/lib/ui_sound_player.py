@@ -15,21 +15,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QPushButton,
+    QSizePolicy, QSpacerItem, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(450, 152)
-        self.gridLayoutWidget = QWidget(Form)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(10, 10, 431, 91))
-        self.gridLayout = QGridLayout(self.gridLayoutWidget)
+        Form.resize(550, 222)
+        self.gridLayoutWidget_3 = QWidget(Form)
+        self.gridLayoutWidget_3.setObjectName(u"gridLayoutWidget_3")
+        self.gridLayoutWidget_3.setGeometry(QRect(10, 9, 531, 145))
+        self.gridLayout_3 = QGridLayout(self.gridLayoutWidget_3)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.BlueFlagSV = QPushButton(self.gridLayoutWidget)
+        self.BlueFlagSV = QPushButton(self.gridLayoutWidget_3)
         self.BlueFlagSV.setObjectName(u"BlueFlagSV")
         font = QFont()
         font.setPointSize(20)
@@ -37,38 +39,63 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.BlueFlagSV, 0, 0, 1, 1)
 
-        self.BlueFlagENG = QPushButton(self.gridLayoutWidget)
+        self.BlueFlagENG = QPushButton(self.gridLayoutWidget_3)
         self.BlueFlagENG.setObjectName(u"BlueFlagENG")
         self.BlueFlagENG.setFont(font)
 
         self.gridLayout.addWidget(self.BlueFlagENG, 0, 1, 1, 1)
 
-        self.StartSV = QPushButton(self.gridLayoutWidget)
-        self.StartSV.setObjectName(u"StartSV")
-        self.StartSV.setFont(font)
-
-        self.gridLayout.addWidget(self.StartSV, 1, 0, 1, 1)
-
-        self.StartENG = QPushButton(self.gridLayoutWidget)
+        self.StartENG = QPushButton(self.gridLayoutWidget_3)
         self.StartENG.setObjectName(u"StartENG")
         self.StartENG.setFont(font)
 
         self.gridLayout.addWidget(self.StartENG, 1, 1, 1, 1)
 
-        self.gridLayoutWidget_2 = QWidget(Form)
-        self.gridLayoutWidget_2.setObjectName(u"gridLayoutWidget_2")
-        self.gridLayoutWidget_2.setGeometry(QRect(9, 99, 435, 41))
-        self.gridLayout_2 = QGridLayout(self.gridLayoutWidget_2)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.gridLayoutWidget_2)
-        self.label.setObjectName(u"label")
-        font1 = QFont()
-        font1.setPointSize(16)
-        self.label.setFont(font1)
-        self.label.setAlignment(Qt.AlignCenter)
+        self.StartSV = QPushButton(self.gridLayoutWidget_3)
+        self.StartSV.setObjectName(u"StartSV")
+        self.StartSV.setFont(font)
 
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.StartSV, 1, 0, 1, 1)
+
+        self.BothSV = QPushButton(self.gridLayoutWidget_3)
+        self.BothSV.setObjectName(u"BothSV")
+        self.BothSV.setFont(font)
+
+        self.gridLayout.addWidget(self.BothSV, 2, 0, 1, 1)
+
+        self.BothENG = QPushButton(self.gridLayoutWidget_3)
+        self.BothENG.setObjectName(u"BothENG")
+        self.BothENG.setFont(font)
+
+        self.gridLayout.addWidget(self.BothENG, 2, 1, 1, 1)
+
+
+        self.gridLayout_3.addLayout(self.gridLayout, 0, 0, 1, 1)
+
+        self.horizontalLayoutWidget = QWidget(Form)
+        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
+        self.horizontalLayoutWidget.setGeometry(QRect(10, 170, 531, 51))
+        self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer = QSpacerItem(150, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.Cancel = QPushButton(self.horizontalLayoutWidget)
+        self.Cancel.setObjectName(u"Cancel")
+        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.Cancel.sizePolicy().hasHeightForWidth())
+        self.Cancel.setSizePolicy(sizePolicy)
+        self.Cancel.setFont(font)
+
+        self.horizontalLayout.addWidget(self.Cancel)
+
+        self.horizontalSpacer_2 = QSpacerItem(150, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
 
 
         self.retranslateUi(Form)
@@ -77,11 +104,13 @@ class Ui_Form(object):
     # setupUi
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Sound Player", None))
         self.BlueFlagSV.setText(QCoreApplication.translate("Form", u"Bl\u00e5flagg", None))
         self.BlueFlagENG.setText(QCoreApplication.translate("Form", u"Bl\u00e5flagg ENG", None))
-        self.StartSV.setText(QCoreApplication.translate("Form", u"Starta", None))
         self.StartENG.setText(QCoreApplication.translate("Form", u"Starta ENG", None))
-        self.label.setText(QCoreApplication.translate("Form", u"V\u00e4nta tills f\u00f6reg\u00e5ende har spelats klart", None))
+        self.StartSV.setText(QCoreApplication.translate("Form", u"Starta", None))
+        self.BothSV.setText(QCoreApplication.translate("Form", u"B\u00e5da", None))
+        self.BothENG.setText(QCoreApplication.translate("Form", u"B\u00e5da ENG", None))
+        self.Cancel.setText(QCoreApplication.translate("Form", u"Stopp", None))
     # retranslateUi
 
