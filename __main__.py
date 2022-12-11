@@ -25,8 +25,14 @@ class MainWindow(QMainWindow):
         self.ui.BothSV.clicked.connect(self.bothSV)
         self.ui.BothENG.clicked.connect(self.bothENG)
         self.ui.Cancel.clicked.connect(self.stop)
+        self.ui.BothENG_2.clicked.connect(self.bothENG_2)
+        self.ui.BothSV_2.clicked.connect(self.bothSV_2)
+        self.ui.RevENG.clicked.connect(self.backaENG)
+        self.ui.RevSV.clicked.connect(self.backaSV)
+        self.ui.CrashENG.clicked.connect(self.krockaENG)
+        self.ui.CrashSV.clicked.connect(self.krockaSV)
 
-        self.paths = ["startSV.wav", "startENG.wav", "blueFlagSV.wav", "blueFlagENG.wav"]
+        self.paths = ["startSV.wav", "startENG.wav", "blueFlagSV.wav", "blueFlagENG.wav", "backaSV.wav", "backaENG.wav", "krockaSV.wav", "krockaENG.wav"]
         self.playlist = []
 
         self.vscode = not True
@@ -73,14 +79,34 @@ class MainWindow(QMainWindow):
         
     def blueFlagENG(self):
         self.play(3)
+
+    def backaSV(self):
+        self.play(4)
+
+    def backaENG(self):
+        self.play(5)
+
+    def krockaSV(self):
+        self.play(6)
+
+    def krockaENG(self):
+        self.play(7)
     
     def bothSV(self):
         self.play(0)
-        self.queue(2)
+        self.play(2)
 
     def bothENG(self):
         self.play(1)
-        self.queue(3)  
+        self.play(3)
+
+    def bothSV_2(self):
+        self.play(4)
+        self.play(6)
+
+    def bothENG_2(self):
+        self.play(5)
+        self.play(7)  
 
     def fullQueue(self):
         icon = QMessageBox.warning
@@ -92,10 +118,6 @@ class MainWindow(QMainWindow):
         msg.setWindowTitle(title)
         msg.setText(text)
         msg.exec()
-        
-
-    def next(self):
-        print('next!')
 
 ## EXECUTE APP
 if __name__ == "__main__":
