@@ -6,19 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>668</width>
+    <width>478</width>
     <height>176</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Sound Player</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(255, 255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="gridLayoutWidget_3">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>3</y>
-     <width>651</width>
+     <width>461</width>
      <height>131</height>
     </rect>
    </property>
@@ -26,7 +35,7 @@
     <item row="0" column="0">
      <layout class="QGridLayout" name="btnLayout">
       <item row="1" column="1">
-       <widget class="QPushButton" name="RevSV">
+       <widget class="QPushButton" name="rev">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -40,7 +49,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="CrashSV">
+       <widget class="QPushButton" name="crash">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -54,7 +63,10 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QPushButton" name="BothSV_2">
+       <widget class="QPushButton" name="aa">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -63,12 +75,12 @@
          </font>
         </property>
         <property name="text">
-         <string>Båda</string>
+         <string>?</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="StartSV">
+       <widget class="QPushButton" name="start">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -82,7 +94,13 @@
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QPushButton" name="StartENG">
+       <widget class="QPushButton" name="dropin">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>33</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -91,26 +109,30 @@
          </font>
         </property>
         <property name="text">
-         <string>Starta ENG</string>
+         <string>Körpass</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="BothSV">
+       <widget class="QPushButton" name="eng">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
           <weight>75</weight>
+          <italic>true</italic>
           <bold>true</bold>
          </font>
         </property>
         <property name="text">
-         <string>Båda</string>
+         <string>Engelska</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QPushButton" name="BlueFlagSV">
+       <widget class="QPushButton" name="blueflag">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -124,7 +146,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="BlueFlagENG">
+       <widget class="QPushButton" name="prep">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -133,12 +155,15 @@
          </font>
         </property>
         <property name="text">
-         <string>Blåflagg ENG</string>
+         <string>Prepp</string>
         </property>
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QPushButton" name="BothENG">
+       <widget class="QPushButton" name="sit">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -147,12 +172,12 @@
          </font>
         </property>
         <property name="text">
-         <string>Båda ENG</string>
+         <string>Sitt ner</string>
         </property>
        </widget>
       </item>
       <item row="2" column="3">
-       <widget class="QPushButton" name="BothENG_2">
+       <widget class="QPushButton" name="Final">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -161,12 +186,12 @@
          </font>
         </property>
         <property name="text">
-         <string>Båda ENG</string>
+         <string>Final</string>
         </property>
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QPushButton" name="RevENG">
+       <widget class="QPushButton" name="qual">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -175,12 +200,12 @@
          </font>
         </property>
         <property name="text">
-         <string>Backa ENG</string>
+         <string>Kval</string>
         </property>
        </widget>
       </item>
       <item row="0" column="3">
-       <widget class="QPushButton" name="CrashENG">
+       <widget class="QPushButton" name="practice">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -189,7 +214,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Krocka ENG</string>
+         <string>Träning</string>
         </property>
        </widget>
       </item>
@@ -202,7 +227,7 @@
     <rect>
      <x>10</x>
      <y>130</y>
-     <width>651</width>
+     <width>461</width>
      <height>51</height>
     </rect>
    </property>
@@ -214,7 +239,7 @@
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>200</width>
+        <width>111</width>
         <height>20</height>
        </size>
       </property>
@@ -247,7 +272,7 @@
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>200</width>
+        <width>111</width>
         <height>20</height>
        </size>
       </property>
